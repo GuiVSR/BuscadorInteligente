@@ -1,0 +1,14 @@
+language: ruby
+
+rvm:
+ - 3.0.2
+
+script:
+ - bundle update --bundler
+ - bundle exec rake db:migrate
+ - bundle exec rspec spec
+ - bundle exec cucumber
+
+branches:
+  only:
+  - master
